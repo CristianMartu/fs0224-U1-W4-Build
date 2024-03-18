@@ -12,7 +12,8 @@ body {
   background-size: cover;
   background-position: center;
   height: 100vh;
-  padding: 5rem;
+  padding-inline: 5rem;
+  padding-block: 2rem
 }
 
 header img {
@@ -25,7 +26,7 @@ header img {
 main h1 {
   color: rgb(241, 232, 219);
   width: 20rem;
-  margin-top: 10%;
+  margin-top: 2rem;
   font-size: 2.7rem;
 }
 
@@ -38,19 +39,21 @@ strong {
 }
 
 main h2 {
-  margin-top: 4rem;
+  margin-top: 2rem;
   color: #a30b61;
   font-weight: bold;
   font-size: 1.6rem;
 }
 
 main p {
-  white-space: pre-line;
   font-size: 0.9rem;
+  width: 31rem;
 }
 
 ul {
-  padding: 45px;
+  padding-inline: 3rem;
+  padding-block: 0.5rem;
+
   font-size: 0.9rem;
 }
 
@@ -69,7 +72,7 @@ footer p {
 footer button {
   height: 2.5rem;
   width: 10rem;
-  margin-left: 20rem;
+  margin-left: 10rem;
   font-size: 1.2rem;
   font-weight: bold;
 }
