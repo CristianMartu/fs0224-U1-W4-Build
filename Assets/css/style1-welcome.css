@@ -23,9 +23,10 @@ header img {
 }
 
 main h1 {
-  width: 15rem;
+  color: rgb(241, 232, 219);
+  width: 20rem;
   margin-top: 10%;
-  font-size: 2rem;
+  font-size: 2.7rem;
 }
 
 main h1 span {
@@ -44,13 +45,13 @@ main h2 {
 }
 
 main p {
-  margin-top: 1%;
-  font-size: 1rem;
-  margin-bottom: 2%;
+  white-space: pre-line;
+  font-size: 0.9rem;
 }
 
 ul {
-  padding: 30px;
+  padding: 45px;
+  font-size: 0.9rem;
 }
 
 ul li {
@@ -61,6 +62,8 @@ footer p {
   display: inline-block;
   margin-top: 4%;
   margin-left: 1rem;
+  font-size: 0.9rem;
+
 }
 
 footer button {
