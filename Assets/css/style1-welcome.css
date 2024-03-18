@@ -1,3 +1,8 @@
+html {
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.5rem;
+}
 body {
   margin: 0;
   padding: 0;
@@ -6,51 +11,41 @@ body {
   background-size: cover;
   background-position: center;
   height: 100vh;
+  padding: 5rem;
 }
 header img {
-  position: fixed;
   top: 20px;
   left: 20px;
   width: 200px;
   height: auto;
 }
 main h1 {
-  text-align: center;
+  width: 15rem;
   margin-top: 10%;
   font-size: 50px;
-  color: white;
+  font-size: 2rem;
+}
+main h1 span {
   font-weight: bold;
 }
 main h2 {
-  margin-left: 38%;
-  margin-top: 2%;
-  font-size: 30px;
+  margin-top: 4rem;
   color: pink;
-  box-shadow: inset;
   font-weight: bold;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.8rem;
 }
 main p {
-  text-align: center;
   margin-top: 1%;
-  color: white;
   font-weight: 600;
   margin-bottom: 2%;
 }
 ul li {
-  text-align: center;
   margin-top: 1%;
-  color: white;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-footer {
-  text-align: center;
 }
 footer p {
+  display: inline-block;
   margin-top: 4%;
   margin-left: 1rem;
-  color: white;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 footer button {
   margin-left: 1rem;
