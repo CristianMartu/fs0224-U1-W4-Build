@@ -1,46 +1,48 @@
 html {
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 1.5rem;
-    font-family: Arial, Helvetica, sans-serif
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
-    background-image: url('../image/bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    padding: 5rem;
-  }
-
-header img{
-    width: 10rem;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
-h1{
-    margin-block: 2rem;
-    width: 20rem;
-    font-size: 2rem;
-    font-weight: 100;
-    margin-inline: auto;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('../image/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding-inline: 5rem;
+  padding-block: 2rem;
 }
-h1 strong{
-    font-weight: bold;
+
+header img {
+  width: 10rem;
+}
+h1 {
+  margin-block: 2rem;
+  width: 20rem;
+  font-size: 2rem;
+  font-weight: 100;
+  margin-inline: auto;
+}
+h1 strong {
+  font-weight: bold;
 }
 main button {
-    width: 15rem;
-    border-radius: 2rem;
-    padding-block: 1.2rem;
-    margin-block: 0.5rem;
+  width: 15rem;
+  border-radius: 2rem;
+  padding-block: 1.2rem;
+  margin-block: 0.5rem;
 }
 main div {
-    width: 33rem;
-    margin-inline: auto;
-    margin-bottom: 2rem;
+  width: 33rem;
+  margin-inline: auto;
+  margin-bottom: 2rem;
 }
 
- main, footer {
-    text-align: center;
+main,
+footer {
+  text-align: center;
 }
