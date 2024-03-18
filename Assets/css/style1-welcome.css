@@ -7,21 +7,21 @@ body {
   background-position: center;
   height: 100vh;
 }
-.Welcome1 {
+header img {
   position: fixed;
   top: 20px;
   left: 20px;
   width: 200px;
   height: auto;
 }
-.h1-main {
+main h1 {
   text-align: center;
   margin-top: 10%;
   font-size: 50px;
   color: white;
   font-weight: bold;
 }
-.h2-main {
+main h2 {
   margin-left: 38%;
   margin-top: 2%;
   font-size: 30px;
@@ -30,7 +30,7 @@ body {
   font-weight: bold;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-.First-paragrafo {
+main p {
   text-align: center;
   margin-top: 1%;
   color: white;
@@ -43,7 +43,7 @@ ul li {
   color: white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-.Secondo-Paragrafo {
+footer p {
   margin-top: 4%;
   margin-left: 28%;
   color: white;
