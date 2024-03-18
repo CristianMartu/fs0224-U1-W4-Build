@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome page</title>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome page</title>
-  <link rel="stylesheet" href="assets/css/reset.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-</head>
+  <body>
+    <header>
+      <img class="Welcome1" src="../Features/epicode_logo.png" alt="logo" />
+    </header>
+    <main>
+      <h1 class="h1-main">Welcome to <strong>your exam</strong></h1>
+      <h2 class="h2-main">Instructions</h2>
+      <p class="First-paragrafo">
+        We don't expect most engineers to know the answers to all of these
+        questions, so don't worry if you're unsure of a few of them
+      </p>
+      <menu>
+        <ul id="ul-main">
+          <li>
+            Each question is <strong>timed </strong> and can only be
+            <strong>answered once.</strong>
+          </li>
+          <li>
+            Changing browser lab or opening other windows will
+            <strong>invalidate the question</strong>.
+          </li>
+          <li>
+            This exam will take approx, <strong>0</strong>-<strong
+              >5 minutes</strong
+            >.
+          </li>
+        </ul>
+      </menu>
+    </main>
+    <footer>
+      <input id="check-footer" type="checkbox" />
+      <p>I promise to answer myself without help from anyone</p>
+      <button id="button-footer" type="button">PROCEED</button>
+    </footer>
 
-<body>
-  <header><img src="../Features/epicode_logo.png" alt="logo" /></header>
-  <main>
-    <h1 class="h1-main">Welcome to <strong>your exam</strong></h1>
-    <h2 class="h2-main">Instructions</h2>
-    <p>We don't expect most engineers to know the answers to all of these questions, so don't worry 
-      if you're unsure of
-      a few of them
-    </p>
-    <menu>
-      <ul id="ul-main">
-        <li>Each question is <strong>timed </strong> and can only be <strong>answered once.</strong> </li>
-        <li>Changing browser lab or opening other windows will <strong>invalidate the question</strong>.</li>
-        <li>This exam will take approx, <strong>0</strong>-<strong>5 minutes</strong>.</li>
-      </ul>
-    </menu>
-  </main>
-  <footer>
-    <input id="check-footer" type="checkbox" />
-    <p>I promise to answer myself without help from anyone</p>
-    <button id="button-footer" type="button">PROCEED</button>
-  </footer>
-
-  <a href="../question/question-page.html" target="_blank">passa a question</a>
-</body>
-<script src="assets/welcome-page.js"></script>
-
+    <a href="../question/question-page.html" target="_blank"
+      >passa a question</a
+    >
+  </body>
+  <script src="assets/welcome-page.js"></script>
 </html>

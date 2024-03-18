@@ -6,5 +6,29 @@ body {
   background-size: cover;
   background-position: center;
   height: 100vh;
+}
+.Welcome1 {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 200px;
+  height: auto;
+}
+.h1-main {
   text-align: center;
+  margin-top: 10%;
+  font-size: 50px;
+  color: white;
+  font-weight: bold;
+}
+.h2-main {
+  margin-left: 38%;
+  margin-top: 5%;
+  color: red;
+  font-size: 30px;
+}
+.First-paragrafo {
+  text-align: center;
+  margin-top: 2%;
+  color: white;
 }
