@@ -67,5 +67,9 @@ footer p {
 }
 
 footer button {
+  height: 2.5rem;
+  width: 10rem;
   margin-left: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
