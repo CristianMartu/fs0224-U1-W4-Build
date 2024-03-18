@@ -13,14 +13,11 @@ body {
   background-position: center;
   height: 100vh;
   padding-inline: 5rem;
-  padding-block: 2rem
+  padding-block: 2rem;
 }
 
 header img {
-  top: 20px;
-  left: 20px;
-  width: 200px;
-  height: auto;
+  width: 10rem;
 }
 
 main h1 {
@@ -66,7 +63,6 @@ footer p {
   margin-top: 4%;
   margin-left: 1rem;
   font-size: 0.9rem;
-
 }
 
 footer button {
