@@ -1,8 +1,9 @@
 html {
   color: white;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -13,40 +14,55 @@ body {
   height: 100vh;
   padding: 5rem;
 }
+
 header img {
   top: 20px;
   left: 20px;
   width: 200px;
   height: auto;
 }
+
 main h1 {
   width: 15rem;
   margin-top: 10%;
-  font-size: 50px;
   font-size: 2rem;
 }
+
 main h1 span {
   font-weight: bold;
 }
+
+strong {
+  font-weight: 700;
+}
+
 main h2 {
   margin-top: 4rem;
-  color: pink;
+  color: #a30b61;
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
+
 main p {
   margin-top: 1%;
-  font-weight: 600;
+  font-size: 1rem;
   margin-bottom: 2%;
 }
+
+ul {
+  padding: 30px;
+}
+
 ul li {
   margin-top: 1%;
 }
+
 footer p {
   display: inline-block;
   margin-top: 4%;
   margin-left: 1rem;
 }
+
 footer button {
   margin-left: 1rem;
 }
