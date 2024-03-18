@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("../image/bg.jpg");
+  background-image: url('../image/bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -28,7 +28,7 @@ main h2 {
   color: pink;
   box-shadow: inset;
   font-weight: bold;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 main p {
   text-align: center;
@@ -41,11 +41,17 @@ ul li {
   text-align: center;
   margin-top: 1%;
   color: white;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+footer {
+  text-align: center;
 }
 footer p {
   margin-top: 4%;
-  margin-left: 28%;
+  margin-left: 1rem;
   color: white;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+footer button {
+  margin-left: 1rem;
 }
