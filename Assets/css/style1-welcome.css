@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('../image/bg.jpg');
+  background-image: url("../image/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -22,4 +22,30 @@ body {
   font-weight: bold;
 }
 .h2-main {
+  margin-left: 38%;
+  margin-top: 2%;
+  font-size: 30px;
+  color: pink;
+  box-shadow: inset;
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.First-paragrafo {
+  text-align: center;
+  margin-top: 1%;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 2%;
+}
+ul li {
+  text-align: center;
+  margin-top: 1%;
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.Secondo-Paragrafo {
+  margin-top: 4%;
+  margin-left: 28%;
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
