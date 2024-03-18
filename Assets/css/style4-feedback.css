@@ -14,6 +14,20 @@ body {
   padding-block: 2rem;
   text-align: center;
 }
+main {
+  width: 26rem;
+  margin-inline: auto;
+  margin-top: 2rem;
+}
+main div {
+  margin-block: 2.5rem;
+}
+main div h1 {
+  margin-bottom: 1rem;
+}
+main div:last-of-type {
+  margin-block: 0.5rem;
+}
 header img {
   width: 10rem;
 }
@@ -23,4 +37,24 @@ header {
 div h1 {
   font-size: 2rem;
   font-weight: bold;
+}
+button {
+  display: inline-block;
+  height: 2.5rem;
+  width: 10rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+hr {
+  border: 0;
+  width: 25rem;
+  border-top: 1px solid red;
+}
+input {
+  background-color: transparent;
+  border: 0;
+  font-size: 0.9rem;
+  width: 25rem;
+  color: white;
+  margin-top: 0.5rem;
 }
