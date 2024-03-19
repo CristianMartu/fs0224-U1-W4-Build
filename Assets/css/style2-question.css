@@ -31,6 +31,7 @@ h1 strong {
   font-weight: bold;
 }
 main button {
+  font-size: inherit;
   width: 15rem;
   border-radius: 2rem;
   padding-block: 1.2rem;
@@ -45,4 +46,8 @@ main div {
 main,
 footer {
   text-align: center;
+}
+
+.changeColor {
+  background-color: #d20094;
 }
