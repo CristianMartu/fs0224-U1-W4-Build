@@ -93,29 +93,28 @@ const questions = [
   },
 ]
 
-const posMain = document.querySelector('main')
-
-const createQuestion = (position, index) => {
+const createQuestion = (position, questionElement, index) => {
   const q1 = document.createElement('h1')
-  console.log(questions[index].question)
-  console.log(questions[index])
-  q1.innerText = questions[index].question
+  q1.innerText = questionElement.question
   const conteiner = document.createElement('div')
   const b1 = document.createElement('button')
   b1.classList.add('buttons')
-  b1.innerText = questions[index].correct_answer
+  b1.innerText = questionElement.correct_answer
   const b2 = document.createElement('button')
   b2.classList.add('buttons')
-  b2.innerText = questions[index].incorrect_answers[0]
+  b2.innerText = questionElement.incorrect_answers[0]
   const b3 = document.createElement('button')
   b3.classList.add('buttons')
-  b3.innerText = questions[index].incorrect_answers[1]
+  b3.innerText = questionElement.incorrect_answers[1]
   const b4 = document.createElement('button')
   b4.classList.add('buttons')
-  b4.innerText = questions[index].incorrect_answers[2]
+  b4.innerText = questionElement.incorrect_answers[2]
   conteiner.append(b1, b2, b3, b4)
   position.appendChild(q1)
   position.appendChild(conteiner)
+
+  const posP = document.querySelector('footer p')
+  posP.innerText = `Question ${index + 1} /10`
 }
 
 const deleteQuestion = () => {
@@ -125,7 +124,23 @@ const deleteQuestion = () => {
   posDiv.remove()
 }
 
-const changeQuestion = (index) => {
+const changeQuestion = (index, time = 19) => {
+  const p = document.getElementById('timer')
+  const interval = setInterval(() => {
+    if (time === -1) {
+      clearInterval(interval)
+    } else if (time === 0) {
+      deleteQuestion()
+      createQuestion(posMain, questions[index], index)
+      index++
+      changeQuestion(index)
+      p.innerText = '20'
+    } else {
+      p.innerText = time
+    }
+    time--
+  }, 1000)
+
   const posButton = document.querySelectorAll('.buttons')
   posButton.forEach((element) => {
     element.addEventListener('mouseover', (changeColor) => {
@@ -135,17 +150,20 @@ const changeQuestion = (index) => {
       element.classList.remove('changeColor')
     })
     element.addEventListener('click', (change) => {
+      if (index === questions.length) {
+        window.location.href = 'results.html'
+      }
+      clearInterval(interval)
       deleteQuestion()
-      createQuestion(posMain, index)
+      createQuestion(posMain, questions[index], index)
       index++
       changeQuestion(index)
     })
   })
 }
 
-createQuestion(posMain, 0)
-let i = 1
-changeQuestion(i)
-// for (let i = 1; i <= questions.length; i++) {
-//   changeQuestion(0)
-// }
+const posMain = document.querySelector('main')
+
+let easyTime = 20
+createQuestion(posMain, questions[0], 0)
+changeQuestion(1, easyTime)
