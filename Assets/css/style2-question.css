@@ -22,7 +22,6 @@ header img {
 }
 h1 {
   margin-block: 2rem;
-  width: 60rem;
   font-size: 2rem;
   font-weight: 100;
   margin-inline: auto;
@@ -46,6 +45,7 @@ main div {
 main,
 footer {
   text-align: center;
+  width: 60rem;
 }
 
 .changeColor {
