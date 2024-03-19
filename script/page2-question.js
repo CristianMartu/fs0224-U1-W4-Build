@@ -126,9 +126,9 @@ const deleteQuestion = () => {
 
 const changeQuestion = (index, time = 19) => {
   const p = document.getElementById('timer')
-  const interval = setInterval(() => {
+  const timer = setInterval(() => {
     if (time === -1) {
-      clearInterval(interval)
+      clearInterval(timer)
     } else if (time === 0) {
       deleteQuestion()
       createQuestion(posMain, questions[index], index)
@@ -153,7 +153,8 @@ const changeQuestion = (index, time = 19) => {
       if (index === questions.length) {
         window.location.href = 'results.html'
       }
-      clearInterval(interval)
+      clearInterval(timer)
+      p.innerText = '20'
       deleteQuestion()
       createQuestion(posMain, questions[index], index)
       index++
