@@ -9,10 +9,15 @@ h1 strong {
 }
 main button {
   font-size: inherit;
+  color: white;
   width: 15rem;
   border-radius: 2rem;
   padding-block: 1.2rem;
   margin: 0.5rem;
+  background-color: transparent;
+  opacity: 0.5;
+  border-top-right-radius: solid, 1rem;
+  border-color: white;
 }
 main div {
   width: 33rem;
