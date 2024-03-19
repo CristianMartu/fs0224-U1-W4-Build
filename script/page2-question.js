@@ -119,7 +119,7 @@ const createQuestion = (position, questionElement, index) => {
 
 const deleteQuestion = () => {
   const posQ = document.querySelector('h1')
-  const posDiv = document.querySelector('div')
+  const posDiv = document.querySelector('main div')
   posMain.removeChild(posQ)
   posDiv.remove()
 }
