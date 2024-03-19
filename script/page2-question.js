@@ -130,6 +130,9 @@ const changeQuestion = (index, time = 19) => {
     if (time === -1) {
       clearInterval(timer)
     } else if (time === 0) {
+      if (index === questions.length) {
+        window.location.href = 'results.html'
+      }
       deleteQuestion()
       createQuestion(posMain, questions[index], index)
       index++
