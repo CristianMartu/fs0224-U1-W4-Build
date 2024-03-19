@@ -174,7 +174,6 @@ let easyTime = 20
 createQuestion(posMain, questions[0], 0)
 changeQuestion(1, easyTime)
 
-
 const corAnswer = () => {
   const array = []
   for (let i = 0; i < questions.length; i++) {
@@ -183,8 +182,8 @@ const corAnswer = () => {
   return array
 }
 const result = corAnswer()
-console.log(corAnswer())
+console.log('result', result)
 console.log(myAnswer)
 // export const elemento1 = result
 window.myArray2 = result
-console.log(myArray2)
+console.log('globale', myArray2)

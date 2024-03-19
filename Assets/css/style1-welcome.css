@@ -55,6 +55,10 @@ footer button {
   color: rgb(0, 0, 0, 0.5);
 }
 
+/* footer button:hover {
+  color: black;
+} */
+
 .inputPressed {
   background-color: #00ffff;
   box-shadow: 0px 0px 43px 3px #00ffff;
