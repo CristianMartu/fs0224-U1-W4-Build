@@ -92,7 +92,7 @@ const questions = [
     incorrect_answers: ['120', '160', '100'],
   },
 ]
-
+const myAnswer = []
 const createQuestion = (position, questionElement, index) => {
   const q1 = document.createElement('h1')
   q1.innerText = questionElement.question
@@ -153,6 +153,8 @@ const changeQuestion = (index, time = 19) => {
       element.classList.remove('changeColor')
     })
     element.addEventListener('click', (change) => {
+      console.log(element.innerHTML)
+      myAnswer.push(element.innerHTML)
       if (index === questions.length) {
         window.location.href = 'results.html'
       }
@@ -171,3 +173,18 @@ const posMain = document.querySelector('main')
 let easyTime = 20
 createQuestion(posMain, questions[0], 0)
 changeQuestion(1, easyTime)
+
+
+const corAnswer = () => {
+  const array = []
+  for (let i = 0; i < questions.length; i++) {
+    array.push(questions[i].correct_answer)
+  }
+  return array
+}
+const result = corAnswer()
+console.log(corAnswer())
+console.log(myAnswer)
+// export const elemento1 = result
+window.myArray2 = result
+console.log(myArray2)
