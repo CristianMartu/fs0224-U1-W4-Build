@@ -71,4 +71,17 @@ footer button {
   margin-left: 10rem;
   font-size: 1.2rem;
   font-weight: bold;
+  background-color: lightgray;
+  box-shadow: 0px 0px 43px 3px lightgray;
+  border: 0;
+  color: rgb(0, 0, 0, 0.5);
+}
+
+.inputPressed {
+  background-color: #00ffff;
+  box-shadow: 0px 0px 43px 3px #00ffff;
+}
+
+.changeColor {
+  color: black;
 }
