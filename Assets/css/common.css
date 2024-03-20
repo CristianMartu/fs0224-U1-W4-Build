@@ -6,14 +6,14 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-image: url("../image/bg.jpg");
+  background-image: url('../image/bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
   padding-inline: 5rem;
-  padding-block: 2rem;
 }
 header img {
   width: 10rem;
+  padding-top: 2rem;
 }

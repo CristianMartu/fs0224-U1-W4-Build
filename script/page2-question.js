@@ -126,7 +126,20 @@ const deleteQuestion = () => {
 
 const changeQuestion = (index, time = 19) => {
   const p = document.getElementById('timer')
+  let progress = 0
+  console.log('cerchio', posCircle)
+  console.dir(posCircle)
   const timer = setInterval(() => {
+    progress += 5
+    // posCircle.style.background = `conic-gradient(
+    //   at calc(50% + 0.5px) calc(50% + 0.5px),
+    //   grey ${progress}%,
+    //   grey 0%,
+    //   #00ffff 0%,
+    //   #00ffff 0%
+    // );`
+    posCircle.style.background = `conic-gradient(#00ffff ${progress}%, #9b9898 0%);`
+
     if (time === -1) {
       clearInterval(timer)
     } else if (time === 0) {
@@ -146,7 +159,7 @@ const changeQuestion = (index, time = 19) => {
 
   //   let counter = 60;
   // let progress = 0;
-  // progress = progress + 2;
+  // progress += 2;
   //   progressBar.style.background = conic-gradient(cyan ${progress}%, #9b9898 0%);
 
   const posButton = document.querySelectorAll('.buttons')
@@ -174,6 +187,8 @@ const changeQuestion = (index, time = 19) => {
 }
 
 const posMain = document.querySelector('main')
+// const posCircle = document.querySelector('.color')
+const posCircle = document.getElementById('circle')
 
 let easyTime = 20
 createQuestion(posMain, questions[0], 0)

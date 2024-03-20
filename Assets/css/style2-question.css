@@ -38,16 +38,28 @@ main p {
   font-size: 1.3rem;
 }
 
-#cerchio {
+#circle {
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
-  background-color: grey;
+  /* background-color: grey; */
   display: flex;
   margin-inline: auto;
+  /* background: conic-gradient(
+    at calc(50% + 0.5px) calc(50% + 0.5px),
+    grey 0%,
+    grey 0%,
+    #00ffff 0%,
+    #00ffff 0%
+  ); */
   background: linear-gradient(to right, #00ffff 0%, grey 0%);
 }
-#cerchio2 {
+
+.color {
+  background: linear-gradient(to right, #00ffff 0%, grey 0%);
+}
+
+#circle2 {
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
@@ -57,7 +69,7 @@ main p {
   color: black;
   display: flex;
 }
-#cerchio2 p {
+#circle2 p {
   margin-block: auto;
   margin-inline: auto;
 }
