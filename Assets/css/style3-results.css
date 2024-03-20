@@ -45,7 +45,7 @@ button {
   position: relative;
   left: -10rem;
 }
-#image {
+#wrong-answer {
   position: relative;
-  left: -6rem;
+  left: 5rem;
 }
