@@ -24,8 +24,9 @@ button {
   border-radius: 50%;
   display: flex;
   margin-inline: auto;
-  background: linear-gradient(to right, #00ffff 0%, grey 0%);
+  background: linear-gradient(to right, #00ffff 0%, #c2128d 0%);
 }
+
 
 #circle2 {
   width: 6rem;
