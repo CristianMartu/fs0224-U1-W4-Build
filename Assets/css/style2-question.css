@@ -45,6 +45,7 @@ main p {
   background-color: grey;
   display: flex;
   margin-inline: auto;
+  background: linear-gradient(to right, #00ffff 0%, grey 0%);
 }
 #cerchio2 {
   width: 6rem;
