@@ -42,9 +42,11 @@ button {
 }
 #corrent-answer {
   margin-right: 2rem;
+  margin-block: auto;
 }
 #wrong-answer {
   margin-left: 2rem;
+  margin-block: auto;
 }
 section {
   display: inline-flex;
