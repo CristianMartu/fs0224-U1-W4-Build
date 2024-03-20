@@ -5,7 +5,6 @@ header {
   text-align: start;
 }
 section div {
-  display: inline-block;
   margin-block: 2rem;
   font-size: 2rem;
 }
@@ -43,10 +42,13 @@ button {
   margin-inline: auto;
 }
 #corrent-answer {
-  position: relative;
-  left: -10rem;
+  margin-right: 2rem;
+  margin-block: auto;
 }
 #wrong-answer {
-  position: relative;
-  left: 5rem;
+  margin-left: 2rem;
+  margin-block: auto;
+}
+section {
+  display: inline-flex;
 }
