@@ -63,25 +63,6 @@ input {
   margin-top: 0.5rem;
 }
 .star-path:hover {
-  fill:#00ffff ;
-}
-/*.newColor path {
-  fill: red;
-}
-#stelle {
-  display: inline-block;
-}
-
-#stelle span {
-  display: inline-block;
-  cursor: pointer;
-  margin-right: 5px;
-}
-
-.highlighted path {
-  fill: "#9b9898";
-}
-
-.selected path {
-  fill: #ff0000;
+  fill: #00ffff;
+  opacity: 0.7;
 }
