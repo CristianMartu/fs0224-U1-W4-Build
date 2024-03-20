@@ -149,11 +149,6 @@ const changeQuestion = (index, time = 19) => {
     time--;
   }, 1000);
 
-  //   let counter = 60;
-  // let progress = 0;
-  // progress += 2;
-  //   progressBar.style.background = conic-gradient(cyan ${progress}%, #9b9898 0%);
-
   const posButton = document.querySelectorAll(".buttons");
   posButton.forEach((element) => {
     element.addEventListener("mouseover", (changeColor) => {
