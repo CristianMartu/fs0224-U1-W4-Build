@@ -18,3 +18,34 @@ button {
   color: white;
   padding: 1rem;
 }
+#circle {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  display: flex;
+  margin-inline: auto;
+  background: linear-gradient(to right, #00ffff 0%, grey 0%);
+}
+
+#circle2 {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: white;
+  margin-inline: auto;
+  margin-block: auto;
+  color: black;
+  display: flex;
+}
+#circle2 p {
+  margin-block: auto;
+  margin-inline: auto;
+}
+#corrent-answer {
+  position: relative;
+  left: -10rem;
+}
+#image {
+  position: relative;
+  left: -6rem;
+}
