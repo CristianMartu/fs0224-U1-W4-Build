@@ -147,6 +147,7 @@ const changeQuestion = (index, time = 20) => {
     progress += 5
     time--
   }, 1000)
+  
 
   const posButton = document.querySelectorAll('.buttons')
   posButton.forEach((element) => {
