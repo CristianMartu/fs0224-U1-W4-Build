@@ -25,9 +25,7 @@ main div {
   margin-inline: auto;
   margin-bottom: 2rem;
 }
-body {
-  width: 60rem;
-}
+
 main,
 footer {
   text-align: center;
@@ -68,4 +66,11 @@ main p {
 .timerText {
   display: block;
   font-size: small;
+}
+
+#circleContainer {
+  margin-left: 30rem;
+}
+header{
+  display: inline-block;
 }
