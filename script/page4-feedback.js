@@ -1,6 +1,7 @@
 const pos = document.getElementById('stelle')
-const newSpan = document.createElement('span')
-newSpan.innerHTML = `<svg
+for (let i = 0; i < 10; i++) {
+  const newSpan = document.createElement('span')
+  newSpan.innerHTML = `<svg
 width="47"
 height="46"
 viewBox="0 0 47 46"
@@ -12,4 +13,5 @@ xmlns="http://www.w3.org/2000/svg"
   fill="#00FFFF"
 />
 </svg>`
-pos.appendChild(newSpan)
+  pos.appendChild(newSpan)
+}
