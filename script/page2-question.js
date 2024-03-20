@@ -129,12 +129,11 @@ const changeQuestion = (index, time = 19) => {
   let progress = 0;
 
   const timer = setInterval(() => {
-    progress += 100 / 20;
     posCircle.style.background = `conic-gradient(#00ffff ${progress}%, #9b9898 0%)`;
 
-    if (time === -1) {
+    if (time === -2) {
       clearInterval(timer);
-    } else if (time === 0) {
+    } else if (time === -1) {
       if (index === questions.length) {
         window.location.href = "results.html";
       }
@@ -146,6 +145,8 @@ const changeQuestion = (index, time = 19) => {
     } else {
       p.innerText = time;
     }
+    progress += 100 / 20;
+
     time--;
   }, 1000);
 
