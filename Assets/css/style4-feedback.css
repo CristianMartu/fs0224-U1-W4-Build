@@ -29,6 +29,10 @@ div h1 {
   font-weight: bold;
 }
 
+#div-button {
+  padding-top: 3rem;
+}
+
 button {
   display: inline-block;
   height: 2.5rem;
