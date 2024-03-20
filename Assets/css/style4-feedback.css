@@ -62,8 +62,10 @@ input {
   color: white;
   margin-top: 0.5rem;
 }
-
-.newColor path {
+.star-path:hover {
+  fill:#00ffff ;
+}
+/*.newColor path {
   fill: red;
 }
 #stelle {
