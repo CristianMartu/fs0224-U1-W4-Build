@@ -13,22 +13,16 @@ for (let i = 0; i < 10; i++) {
   starsContainer.appendChild(newSpan);
 }
 
-stars.forEach((star, index) => {
-  star.addEventListener("mouseover", () => highlightStars(index));
-  star.addEventListener("mouseout", () => resetStars());
-  star.addEventListener("click", () => selectStars(index));
-});
-
 function highlightStars(index) {
   for (let i = 0; i <= index; i++) {
-    stars[i].querySelector(".star-path").style.fill = "#808080"; // Grigio
+    stars[i].querySelector(".star-path").style.fill = "#808080";
   }
 }
 
 function resetStars() {
   stars.forEach((star, index) => {
     if (!star.classList.contains("selected")) {
-      star.querySelector(".star-path").style.fill = "#00FFFF"; // Ripristina il colore originale
+      star.querySelector(".star-path").style.fill = "#00FFFF";
     }
   });
 }
@@ -37,6 +31,12 @@ function selectStars(index) {
   resetStars(); // Ripristina il colore di tutte le stelle
   for (let i = 0; i <= index; i++) {
     stars[i].classList.add("selected");
-    stars[i].querySelector(".star-path").style.fill = "red"; // Rosso
+    stars[i].querySelector(".star-path").style.fill = "red";
   }
 }
+
+stars.forEach((star, index) => {
+  star.addEventListener("mouseover", () => highlightStars(index));
+  star.addEventListener("mouseout", () => resetStars());
+  star.addEventListener("click", () => selectStars(index));
+});
