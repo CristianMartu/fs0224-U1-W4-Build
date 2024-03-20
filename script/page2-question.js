@@ -133,6 +133,7 @@ const changeQuestion = (index, time = 20) => {
       clearInterval(timer)
     } else if (time === 0) {
       if (index === questions.length) {
+        sessionStorage.setItem('myAnswer', myAnswer)
         window.location.href = 'results.html'
       }
       deleteQuestion()
@@ -156,17 +157,18 @@ const changeQuestion = (index, time = 20) => {
       element.classList.remove('changeColor')
     })
     element.addEventListener('click', (change) => {
-      console.log(element.innerHTML)
       myAnswer.push(element.innerHTML)
       if (index === questions.length) {
+        sessionStorage.setItem('myAnswer', myAnswer)
         window.location.href = 'results.html'
+      } else {
+        clearInterval(timer)
+        p.innerText = '20'
+        deleteQuestion()
+        createQuestion(posMain, questions[index], index)
+        index++
+        changeQuestion(index)
       }
-      clearInterval(timer)
-      p.innerText = '20'
-      deleteQuestion()
-      createQuestion(posMain, questions[index], index)
-      index++
-      changeQuestion(index)
     })
   })
 }
@@ -178,16 +180,12 @@ let easyTime = 20
 createQuestion(posMain, questions[0], 0)
 changeQuestion(1, easyTime)
 
-const corAnswer = () => {
+const correctAnswer = () => {
   const array = []
   for (let i = 0; i < questions.length; i++) {
     array.push(questions[i].correct_answer)
   }
   return array
 }
-const result = corAnswer()
-console.log('result', result)
-console.log(myAnswer)
-// export const elemento1 = result
-window.myArray2 = result
-console.log('globale', myArray2)
+
+sessionStorage.setItem('correctAnswer', correctAnswer())
