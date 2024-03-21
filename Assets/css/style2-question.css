@@ -74,6 +74,9 @@ main p {
   color: white;
   display: flex;
   flex-direction: column;
+  background-size: cover;
+  overflow: hidden;
+  background-image: url("/Assets/image/bg.jpg");
 }
 
 #timer {
