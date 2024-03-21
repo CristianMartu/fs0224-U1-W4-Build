@@ -68,6 +68,8 @@ footer button {
   background-color: transparent;
   border: 2.5px solid white;
   position: relative;
+  top: 0.2rem;
+  left: 1rem;
 }
 #check-footer::before {
   content: "\2713";
