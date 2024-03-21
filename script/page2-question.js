@@ -1,5 +1,19 @@
 const myAnswer = []
 
+const createRandomArray = (lenght) => {
+  const listNumber = []
+  let i = 0
+  while (i < lenght) {
+    const random = Math.floor(Math.random() * lenght)
+    const search = listNumber.includes(random)
+    if (!search) {
+      listNumber.push(random)
+      i++
+    }
+  }
+  return listNumber
+}
+
 const corAnswer = () => {
   const array = []
   for (let i = 0; i < questions.length; i++) {
@@ -48,9 +62,6 @@ const timer = (index, time, progress = 0) => {
         window.location.href = 'results.html'
       }
       deleteQuestion()
-      if (index === 0) {
-        index++
-      }
       createQuestion(posMain, questions[index], index)
       index++
       changeQuestion(totalTime, index)
@@ -64,10 +75,7 @@ const timer = (index, time, progress = 0) => {
   return timerInterval
 }
 
-const changeQuestion = (time, index = 0) => {
-  if (index === 0) {
-    createQuestion(posMain, questions[index], index)
-  }
+const changeQuestion = (time, index = 1) => {
   const startTimer = timer(index, time)
   const posButton = document.querySelectorAll('.buttons')
   posButton.forEach((element) => {
@@ -81,9 +89,6 @@ const changeQuestion = (time, index = 0) => {
         clearInterval(startTimer)
         p.innerText = '0'
         deleteQuestion()
-        if (index === 0) {
-          index++
-        }
         createQuestion(posMain, questions[index], index)
         index++
         changeQuestion(time, index)
@@ -97,7 +102,11 @@ const posCircle = document.getElementById('circle')
 const p = document.getElementById('timer')
 const correctAnswer = corAnswer()
 
+const randomArray = createRandomArray(questions.length)
+console.log(randomArray)
+
 let easyTime = 20
+createQuestion(posMain, questions[0], 0)
 changeQuestion(easyTime)
 
 sessionStorage.setItem('correctAnswer', correctAnswer)
