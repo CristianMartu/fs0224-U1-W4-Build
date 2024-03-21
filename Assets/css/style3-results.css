@@ -51,12 +51,12 @@ button:hover {
   margin-inline: auto;
 }
 #corrent-answer {
-  margin-right: 2rem;
+  margin-right: 3rem;
   margin-block: auto;
   font-size: 1.8rem;
 }
 #wrong-answer {
-  margin-left: 2rem;
+  margin-left: 3rem;
   margin-block: auto;
   font-size: 1.8rem;
 }
