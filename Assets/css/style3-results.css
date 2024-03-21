@@ -13,11 +13,12 @@ h1 {
 }
 button {
   background-color: transparent;
-  border: 1px solid white;
+  border: 2px solid white;
   color: white;
   padding: 0.8rem 3rem;
   font-size: 0.8rem;
   font-weight: bold;
+
 }
 button:hover {
   background-color: #00ffff;
