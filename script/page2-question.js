@@ -65,30 +65,28 @@ const timer = (index, time, progress = 0) => {
   return timerInterval
 }
 
-const changeQuestion = (index, time = 20) => {
+const changeQuestion = (time, index = 0) => {
+  if (index === 0) {
+    createQuestion(posMain, questions[index], index)
+  }
   const startTimer = timer(index, time)
-
   const posButton = document.querySelectorAll('.buttons')
   posButton.forEach((element) => {
     element.classList.add('changeColor')
-    element.addEventListener(
-      'click',
-      (change) => {
-        myAnswer.push(element.innerHTML)
-        if (index === questions.length) {
-          sessionStorage.setItem('myAnswer', myAnswer)
-          window.location.href = 'results.html'
-        } else {
-          clearInterval(startTimer)
-          p.innerText = '0'
-          deleteQuestion()
-          createQuestion(posMain, questions[index], index)
-          index++
-          changeQuestion(index)
-        }
-      },
-      { once: true }
-    )
+    element.addEventListener('click', (change) => {
+      myAnswer.push(element.innerHTML)
+      if (index === questions.length) {
+        sessionStorage.setItem('myAnswer', myAnswer)
+        window.location.href = 'results.html'
+      } else {
+        clearInterval(startTimer)
+        p.innerText = '0'
+        deleteQuestion()
+        createQuestion(posMain, questions[index], index)
+        index++
+        changeQuestion(time, index)
+      }
+    })
   })
 }
 
@@ -98,7 +96,6 @@ const p = document.getElementById('timer')
 const correctAnswer = corAnswer()
 
 let easyTime = 20
-createQuestion(posMain, questions[0], 0)
-changeQuestion(1, easyTime)
+changeQuestion(easyTime)
 
 sessionStorage.setItem('correctAnswer', correctAnswer)

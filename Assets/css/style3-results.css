@@ -40,9 +40,8 @@ button:hover {
   margin-block: auto;
   color: black;
   display: flex;
-  background-size: cover;
-  overflow: hidden;
-  background-image: url("/Assets/image/bg.jpg");
+  background-image: url('/Assets/image/bg.jpg');
+  background-position: center;
 }
 
 #circle2 p {

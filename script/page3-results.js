@@ -67,4 +67,8 @@ if (percentageCorrect >= 60) {
 }
 
 const posCircle = document.getElementById('circle')
-animatePercentageText(percentageWrong, percentageCorrect)
+if (percentageCorrect !== percentageWrong) {
+  animatePercentageText(percentageWrong, percentageCorrect)
+} else {
+  animatePercentageText(51, 51)
+}
