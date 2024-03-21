@@ -36,7 +36,10 @@ main,
 footer {
   text-align: center;
 }
-
+footer p span {
+  font-weight: bold;
+  color: #d20094;
+}
 .changeColor {
   background-color: #d20094;
 }
@@ -49,7 +52,7 @@ main p {
   display: inline-block;
   width: 5rem;
   height: 5rem;
-  padding-left: 60vw
+  padding-left: 60vw;
 }
 
 #circle {
