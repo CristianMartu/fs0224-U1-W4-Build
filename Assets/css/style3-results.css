@@ -17,6 +17,11 @@ button {
   color: white;
   padding: 1rem;
 }
+button:hover {
+  background-color: #00ffff;
+  color: white;
+}
+
 #circle {
   width: 8rem;
   height: 8rem;
@@ -25,7 +30,6 @@ button {
   margin-inline: auto;
   background: linear-gradient(to right, #00ffff 0%, #c2128d 0%);
 }
-
 
 #circle2 {
   width: 6rem;
@@ -51,4 +55,24 @@ button {
 }
 section {
   display: inline-flex;
+}
+#p1 {
+  font-weight: bold;
+  font-size: 130%;
+  margin-bottom: 0.3rem;
+  margin-top: 0.3rem;
+}
+#p2 {
+  font-size: 50%;
+  font-weight: 300;
+}
+#p3 {
+  font-weight: bold;
+  font-size: 130%;
+  margin-bottom: 0.3rem;
+  margin-top: 0.3rem;
+}
+#p4 {
+  font-size: 50%;
+  font-weight: 300;
 }
