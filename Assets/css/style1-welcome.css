@@ -66,5 +66,20 @@ footer button {
   width: 20px;
   height: 20px;
   background-color: transparent;
-  border: 3.5px solid white;
+  border: 2.5px solid white;
+  position: relative;
+}
+#check-footer::before {
+  content: "\2713";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6em;
+  color: white;
+  opacity: 0;
+}
+#check-footer:checked::before {
+  opacity: 1;
+  color: white;
 }
