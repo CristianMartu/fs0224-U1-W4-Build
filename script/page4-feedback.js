@@ -1,11 +1,13 @@
 const starsContainer = document.getElementById("stelle");
-const feedbackTextElement = document.getElementById("textInput");
+const feedbackTextElement = document.getElementById("feedback-text");
 const stars = [];
 
-function setInputValue(text) {
-  feedbackTextElement.value = text;
+// Funzione per creare un elemento p con il testo del feedback
+function createFeedbackParagraph(text) {
+  feedbackTextElement.innerHTML = text;
 }
 
+// Inizializzazione delle stelle
 for (let i = 0; i < 10; i++) {
   const newSpan = document.createElement("span");
   const svg = `
@@ -18,7 +20,9 @@ for (let i = 0; i < 10; i++) {
   starsContainer.appendChild(newSpan);
 }
 
+// Aggiunta dell'evento click a ciascuna stella
 const createClass = document.querySelectorAll(".star-path");
+
 createClass.forEach((star, index) => {
   star.addEventListener("click", () => {
     createClass.forEach((star, index2) => {
@@ -29,18 +33,21 @@ createClass.forEach((star, index) => {
       }
     });
 
+    // Calcola il numero di stelle cliccate
     const clickedStars = index + 1;
 
+    // Mostra il messaggio di feedback appropriato
     let feedbackText = "";
     if (clickedStars >= 0 && clickedStars <= 5) {
       feedbackText =
-        "We are sorry about your experience with us... \uD83D\uDE1E";
+        "We are sorry about your experience with us... \uD83D\uDC4E";
     } else if (clickedStars >= 6 && clickedStars <= 8) {
-      feedbackText = "Thanks for your support! \uD83D\uDC4D";
+      feedbackText = "Thanks for your support! &#128077;"; // Aggiunta del pollice in su
     } else if (clickedStars >= 9 && clickedStars <= 10) {
-      feedbackText = "We really appreciate your feedback! \uD83E\uDD29";
+      feedbackText = "We really appreciate your feedback!  \uD83D\uDE0D";
     }
 
-    setInputValue(feedbackText);
+    // Aggiorna il contenuto del messaggio di feedback
+    createFeedbackParagraph(feedbackText);
   });
 });
