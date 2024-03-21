@@ -35,11 +35,14 @@ button:hover {
   width: 16rem;
   height: 16rem;
   border-radius: 50%;
-  background-color: rgb(12, 17, 59);
+  background-color: white;
   margin-inline: auto;
   margin-block: auto;
   color: black;
   display: flex;
+  background-size: cover;
+  overflow: hidden;
+  background-image: url("/Assets/image/bg.jpg");
 }
 
 #circle2 p {

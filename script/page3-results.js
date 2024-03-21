@@ -32,8 +32,7 @@ wrong1.innerText = result(lenghtAnswer, resultWrong) + "%";
 const wrong2 = document.getElementById("p4");
 wrong2.innerText = questionResult(resultWrong, lenghtAnswer);
 const percentageCorrect = result(lenghtAnswer, lengthCorrect);
-const messageParagraph = document.querySelector("#circle2 p"); // Seleziona il paragrafo all'interno di circle2
-
+const messageParagraph = document.querySelector("#circle2 p");
 if (percentageCorrect >= 60) {
   messageParagraph.innerHTML =
     "Congratulazioni! <span style='color: #00BFFF;'>hai passato l'esame.</span>";
