@@ -30,13 +30,13 @@ const deleteQuestion = () => {
   posDiv.remove()
 }
 
-const changeQuestion = (index, time = 20) => {
-  const p = document.getElementById('timer')
-  let progress = 0
-  const timer = setInterval(() => {
+const timer = (index, time, progress = 0) => {
+  const totalTime = time
+  const timerInterval = setInterval(() => {
     posCircle.style.background = `conic-gradient(#00ffff ${progress}%, #9b9898 0%)`
     if (time === -1) {
-      clearInterval(timer)
+      myAnswer.push('Domanda non risposta')
+      clearInterval(timerInterval)
     } else if (time === 0) {
       if (index === questions.length) {
         sessionStorage.setItem('myAnswer', myAnswer)
@@ -50,9 +50,14 @@ const changeQuestion = (index, time = 20) => {
     } else {
       p.innerText = time
     }
-    progress += 5
+    progress += 100 / totalTime
     time--
   }, 1000)
+  return timerInterval
+}
+
+const changeQuestion = (index, time = 20) => {
+  const startTimer = timer(index, time)
 
   const posButton = document.querySelectorAll('.buttons')
   posButton.forEach((element) => {
@@ -68,12 +73,14 @@ const changeQuestion = (index, time = 20) => {
         sessionStorage.setItem('myAnswer', myAnswer)
         window.location.href = 'results.html'
       } else {
-        clearInterval(timer)
-        p.innerText = '20'
-        deleteQuestion()
-        createQuestion(posMain, questions[index], index)
-        index++
-        changeQuestion(index)
+        clearInterval(startTimer)
+        p.innerText = '0'
+        setTimeout(() => {
+          deleteQuestion()
+          createQuestion(posMain, questions[index], index)
+          index++
+          changeQuestion(index)
+        }, 1000)
       }
     })
   })
@@ -81,6 +88,7 @@ const changeQuestion = (index, time = 20) => {
 
 const posMain = document.querySelector('main')
 const posCircle = document.getElementById('circle')
+const p = document.getElementById('timer')
 
 let easyTime = 20
 createQuestion(posMain, questions[0], 0)
