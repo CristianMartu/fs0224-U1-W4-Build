@@ -1,5 +1,18 @@
 const myAnswer = []
+function shuffleArray(array) {
+  return array.sort(() => Math.random() - 0.5)
+}
 
+const shuffledArray = shuffleArray(questions)
+
+const createArrayQuestions = (element) => {
+  const array = []
+  array.push(element.correct_answer)
+  for (let i = 0; i < element.incorrect_answers.length; i++) {
+    array.push(element.incorrect_answers[i])
+  }
+  return shuffleArray(array)
+}
 const createRandomArray = (lenght) => {
   const listNumber = []
   let i = 0
@@ -23,17 +36,15 @@ const corAnswer = () => {
 }
 
 const createQuestion = (position, questionElement, index) => {
+  const arrayQuestions = createArrayQuestions(questionElement)
+
   const questionText = document.createElement('h1')
   questionText.innerText = questionElement.question
   const conteiner = document.createElement('div')
-  const answerCorrect = document.createElement('button')
-  answerCorrect.classList.add('buttons')
-  answerCorrect.innerText = questionElement.correct_answer
-  conteiner.appendChild(answerCorrect)
-  for (let i = 0; i < questionElement.incorrect_answers.length; i++) {
+  for (let i = 0; i < arrayQuestions.length; i++) {
     const b = document.createElement('button')
     b.classList.add('buttons')
-    b.innerText = questionElement.incorrect_answers[i]
+    b.innerText = arrayQuestions[i]
     conteiner.appendChild(b)
   }
   position.appendChild(questionText)
@@ -62,7 +73,7 @@ const timer = (index, time, progress = 0) => {
         window.location.href = 'results.html'
       }
       deleteQuestion()
-      createQuestion(posMain, questions[index], index)
+      createQuestion(posMain, shuffledArray[index], index)
       index++
       changeQuestion(totalTime, index)
       p.innerText = '0'
@@ -82,14 +93,14 @@ const changeQuestion = (time, index = 1) => {
     element.classList.add('changeColor')
     element.addEventListener('click', (change) => {
       myAnswer.push(element.innerHTML)
-      if (index === questions.length) {
+      if (index === shuffledArray.length) {
         sessionStorage.setItem('myAnswer', myAnswer)
         window.location.href = 'results.html'
       } else {
         clearInterval(startTimer)
         p.innerText = '0'
         deleteQuestion()
-        createQuestion(posMain, questions[index], index)
+        createQuestion(posMain, shuffledArray[index], index)
         index++
         changeQuestion(time, index)
       }
@@ -102,11 +113,8 @@ const posCircle = document.getElementById('circle')
 const p = document.getElementById('timer')
 const correctAnswer = corAnswer()
 
-const randomArray = createRandomArray(questions.length)
-console.log(randomArray)
-
 let easyTime = 20
-createQuestion(posMain, questions[0], 0)
+createQuestion(posMain, shuffledArray[0], 0)
 changeQuestion(easyTime)
 
 sessionStorage.setItem('correctAnswer', correctAnswer)

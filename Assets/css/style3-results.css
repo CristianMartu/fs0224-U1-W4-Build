@@ -22,7 +22,6 @@ button {
   padding: 0.8rem 3rem;
   font-size: 0.8rem;
   font-weight: bold;
-
 }
 
 button:hover {
@@ -37,8 +36,13 @@ button:hover {
   display: flex;
   margin-inline: auto;
   background: linear-gradient(to right, #00ffff 0%, #c2128d 0%);
-  -webkit-mask-image: linear-gradient(black, black);
-  mask-image: linear-gradient (black, black);
+  mask-image: radial-gradient(
+    circle at center,
+    transparent 0,
+    transparent 5rem,
+    black 5rem
+  );
+  position: relative;
 }
 
 #circle2 {
@@ -50,11 +54,10 @@ button:hover {
   margin-block: auto;
   color: black;
   display: flex;
-  -webkit-mask-image: linear-gradient(black, black);
-  mask-image: linear-gradient (black, black);
 }
 
 #circle2 p {
+  z-index: 1;
   margin-block: auto;
   margin-inline: auto;
 }
