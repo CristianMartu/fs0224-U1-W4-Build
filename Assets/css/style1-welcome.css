@@ -60,3 +60,11 @@ footer button {
   box-shadow: 0px 0px 43px 3px #00ffff;
   color: black;
 }
+
+#check-footer {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 3.5px solid white;
+}
