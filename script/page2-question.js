@@ -9,25 +9,21 @@ const corAnswer = () => {
 }
 
 const createQuestion = (position, questionElement, index) => {
-  const q1 = document.createElement('h1')
-  q1.innerText = questionElement.question
+  const questionText = document.createElement('h1')
+  questionText.innerText = questionElement.question
   const conteiner = document.createElement('div')
-  const b1 = document.createElement('button')
-  b1.classList.add('buttons')
-  b1.innerText = questionElement.correct_answer
-  const b2 = document.createElement('button')
-  b2.classList.add('buttons')
-  b2.innerText = questionElement.incorrect_answers[0]
-  const b3 = document.createElement('button')
-  b3.classList.add('buttons')
-  b3.innerText = questionElement.incorrect_answers[1]
-  const b4 = document.createElement('button')
-  b4.classList.add('buttons')
-  b4.innerText = questionElement.incorrect_answers[2]
-  conteiner.append(b1, b2, b3, b4)
-  position.appendChild(q1)
+  const answerCorrect = document.createElement('button')
+  answerCorrect.classList.add('buttons')
+  answerCorrect.innerText = questionElement.correct_answer
+  conteiner.appendChild(answerCorrect)
+  for (let i = 0; i < questionElement.incorrect_answers.length; i++) {
+    const b = document.createElement('button')
+    b.classList.add('buttons')
+    b.innerText = questionElement.incorrect_answers[i]
+    conteiner.appendChild(b)
+  }
+  position.appendChild(questionText)
   position.appendChild(conteiner)
-
   const posP = document.querySelector('footer p')
   posP.innerHTML = `Question ${index + 1} <code><span>/10</span></code>`
 }
@@ -52,9 +48,12 @@ const timer = (index, time, progress = 0) => {
         window.location.href = 'results.html'
       }
       deleteQuestion()
+      if (index === 0) {
+        index++
+      }
       createQuestion(posMain, questions[index], index)
       index++
-      changeQuestion(index)
+      changeQuestion(totalTime, index)
       p.innerText = '0'
     } else {
       p.innerText = time
@@ -82,6 +81,9 @@ const changeQuestion = (time, index = 0) => {
         clearInterval(startTimer)
         p.innerText = '0'
         deleteQuestion()
+        if (index === 0) {
+          index++
+        }
         createQuestion(posMain, questions[index], index)
         index++
         changeQuestion(time, index)

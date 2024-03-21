@@ -41,6 +41,7 @@ const p3Wrong = document.getElementById('p3')
 const animatePercentageText = (totalWrong, totalCorrect) => {
   let currentWrong = 0
   let currentCorrect = 0
+  let currentColor = 100
   const interval = setInterval(() => {
     if (currentWrong === totalWrong && currentCorrect === totalCorrect) {
       clearInterval(interval)
@@ -50,9 +51,12 @@ const animatePercentageText = (totalWrong, totalCorrect) => {
         currentCorrect++
       }
       if (currentWrong <= totalWrong) {
-        posCircle.style.background = `conic-gradient( #c2128d ${currentWrong}%, #00ffff 0%)`
         p3Wrong.innerHTML = currentWrong + '%'
         currentWrong++
+      }
+      if (totalWrong <= currentColor) {
+        posCircle.style.background = `conic-gradient( #c2128d ${currentColor}%, #00ffff 0%)`
+        currentColor--
       }
     }
   }, 20)
