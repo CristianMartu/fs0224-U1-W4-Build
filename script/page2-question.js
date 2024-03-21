@@ -1,4 +1,13 @@
 const myAnswer = []
+
+const corAnswer = () => {
+  const array = []
+  for (let i = 0; i < questions.length; i++) {
+    array.push(questions[i].correct_answer)
+  }
+  return array
+}
+
 const createQuestion = (position, questionElement, index) => {
   const q1 = document.createElement('h1')
   q1.innerText = questionElement.question
@@ -67,39 +76,43 @@ const changeQuestion = (index, time = 20) => {
     element.addEventListener('mouseleave', (changeColor) => {
       element.classList.remove('changeColor')
     })
-    element.addEventListener('click', (change) => {
-      myAnswer.push(element.innerHTML)
-      if (index === questions.length) {
-        sessionStorage.setItem('myAnswer', myAnswer)
-        window.location.href = 'results.html'
-      } else {
-        clearInterval(startTimer)
-        p.innerText = '0'
-        setTimeout(() => {
-          deleteQuestion()
-          createQuestion(posMain, questions[index], index)
-          index++
-          changeQuestion(index)
-        }, 1000)
-      }
-    })
+    console.log(element)
+    console.dir(element)
+    element.addEventListener(
+      'click',
+      (change) => {
+        myAnswer.push(element.innerHTML)
+        if (correctAnswer[index - 1] === element.innerText) {
+          element.style.backgroundColor = 'green'
+        } else {
+          element.style.backgroundColor = 'red'
+        }
+        if (index === questions.length) {
+          sessionStorage.setItem('myAnswer', myAnswer)
+          window.location.href = 'results.html'
+        } else {
+          clearInterval(startTimer)
+          p.innerText = '0'
+          setTimeout(() => {
+            deleteQuestion()
+            createQuestion(posMain, questions[index], index)
+            index++
+            changeQuestion(index)
+          }, 1000)
+        }
+      },
+      { once: true }
+    )
   })
 }
 
 const posMain = document.querySelector('main')
 const posCircle = document.getElementById('circle')
 const p = document.getElementById('timer')
+const correctAnswer = corAnswer()
 
 let easyTime = 20
 createQuestion(posMain, questions[0], 0)
 changeQuestion(1, easyTime)
 
-const correctAnswer = () => {
-  const array = []
-  for (let i = 0; i < questions.length; i++) {
-    array.push(questions[i].correct_answer)
-  }
-  return array
-}
-
-sessionStorage.setItem('correctAnswer', correctAnswer())
+sessionStorage.setItem('correctAnswer', correctAnswer)
