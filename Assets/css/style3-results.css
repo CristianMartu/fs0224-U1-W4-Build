@@ -6,7 +6,7 @@ header {
 }
 section div {
   margin-block: 2rem;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 h1 {
   font-size: 2rem;
@@ -15,7 +15,9 @@ button {
   background-color: transparent;
   border: 1px solid white;
   color: white;
-  padding: 1rem;
+  padding: 0.8rem 3rem;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 button:hover {
   background-color: #00ffff;
@@ -23,8 +25,8 @@ button:hover {
 }
 
 #circle {
-  width: 21rem;
-  height: 21rem;
+  width: 14rem;
+  height: 14rem;
   border-radius: 50%;
   display: flex;
   margin-inline: auto;
@@ -32,8 +34,8 @@ button:hover {
 }
 
 #circle2 {
-  width: 16rem;
-  height: 16rem;
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
   background-color: white;
   margin-inline: auto;
@@ -51,10 +53,12 @@ button:hover {
 #corrent-answer {
   margin-right: 2rem;
   margin-block: auto;
+  font-size: 1.8rem;
 }
 #wrong-answer {
   margin-left: 2rem;
   margin-block: auto;
+  font-size: 1.8rem;
 }
 section {
   display: inline-flex;
