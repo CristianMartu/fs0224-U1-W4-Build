@@ -1,16 +1,20 @@
 body {
   text-align: center;
 }
+
 header {
   text-align: start;
 }
+
 section div {
   margin-block: 2rem;
   font-size: 1rem;
 }
+
 h1 {
   font-size: 2rem;
 }
+
 button {
   background-color: transparent;
   border: 2px solid white;
@@ -20,6 +24,7 @@ button {
   font-weight: bold;
 
 }
+
 button:hover {
   background-color: #00ffff;
   color: white;
@@ -32,58 +37,68 @@ button:hover {
   display: flex;
   margin-inline: auto;
   background: linear-gradient(to right, #00ffff 0%, #c2128d 0%);
+  -webkit-mask-image: linear-gradient(black, black);
+  mask-image: linear-gradient (black, black);
 }
 
 #circle2 {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
-  background-color: white;
+  background-color: transparent;
   margin-inline: auto;
   margin-block: auto;
   color: black;
   display: flex;
-  background-image: url('/Assets/image/bg.jpg');
-  background-position: center;
+  -webkit-mask-image: linear-gradient(black, black);
+  mask-image: linear-gradient (black, black);
 }
 
 #circle2 p {
   margin-block: auto;
   margin-inline: auto;
 }
+
 #corrent-answer {
   margin-right: 3rem;
   margin-block: auto;
   font-size: 1.8rem;
 }
+
 #wrong-answer {
   margin-left: 3rem;
   margin-block: auto;
   font-size: 1.8rem;
 }
+
 section {
   display: inline-flex;
 }
+
 #p1 {
   font-weight: bold;
   font-size: 130%;
   margin-bottom: 0.3rem;
   margin-top: 0.3rem;
 }
+
 #p2 {
   font-size: 50%;
   font-weight: 300;
 }
+
 #p3 {
   font-weight: bold;
   font-size: 130%;
   margin-bottom: 0.3rem;
   margin-top: 0.3rem;
 }
+
 #p4 {
   font-size: 50%;
   font-weight: 300;
 }
+
 #p5 {
   color: white;
 }
