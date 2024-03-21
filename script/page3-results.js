@@ -64,10 +64,10 @@ const animatePercentageText = (totalWrong, totalCorrect) => {
 
 if (percentageCorrect >= 60) {
   messageParagraph.innerHTML =
-    "Congratulazioni! <span style='color: #00BFFF;'>hai passato l'esame.</span>"
+    "Congratulation! <span style='color: #00BFFF;'>You passed the exam.</span>"
 } else {
   messageParagraph.innerHTML =
-    "Ci dispiace! <span style='color: red;'>Non hai passato l'esame.</span>"
+    "I'm sorry! <span style='color: red;'>You didn't pass the exam.</span>"
 }
 
 const posCircle = document.getElementById('circle')
