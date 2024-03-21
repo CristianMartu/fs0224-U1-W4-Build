@@ -35,12 +35,13 @@ button:hover {
   width: 16rem;
   height: 16rem;
   border-radius: 50%;
-  background-color: white;
+  background-color: rgb(12, 17, 59);
   margin-inline: auto;
   margin-block: auto;
   color: black;
   display: flex;
 }
+
 #circle2 p {
   margin-block: auto;
   margin-inline: auto;
@@ -75,4 +76,7 @@ section {
 #p4 {
   font-size: 50%;
   font-weight: 300;
+}
+#p5 {
+  color: white;
 }
