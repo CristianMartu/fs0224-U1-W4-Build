@@ -31,3 +31,11 @@ const wrong1 = document.getElementById("p3");
 wrong1.innerText = result(lenghtAnswer, resultWrong) + "%";
 const wrong2 = document.getElementById("p4");
 wrong2.innerText = questionResult(resultWrong, lenghtAnswer);
+const percentageCorrect = result(lenghtAnswer, lengthCorrect);
+const messageParagraph = document.querySelector("#circle2 p");
+
+if (percentageCorrect >= 60) {
+  messageParagraph.innerText = "Congratulations! you have passed the Exam";
+} else {
+  messageParagraph.innerText = "sorry, try again next time!";
+}
