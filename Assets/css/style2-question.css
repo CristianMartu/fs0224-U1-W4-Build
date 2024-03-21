@@ -36,10 +36,12 @@ main,
 footer {
   text-align: center;
 }
+
 footer p span {
   font-weight: bold;
   color: #d20094;
 }
+
 .changeColor:hover {
   background: linear-gradient(#70014f, #d20094);
 }
@@ -68,15 +70,13 @@ main p {
   width: 80%;
   height: 80%;
   border-radius: 50%;
-  background-color: #0b113b;
   margin-inline: auto;
   margin-block: auto;
   color: white;
   display: flex;
   flex-direction: column;
-  background-size: cover;
-  overflow: hidden;
   background-image: url('/Assets/image/bg.jpg');
+  background-position: right;
 }
 
 #timer {
