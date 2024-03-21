@@ -40,3 +40,5 @@ if (percentageCorrect >= 60) {
   messageParagraph.innerHTML =
     "Ci dispiace! <span style='color: red;'>Non hai passato l'esame.</span>";
 }
+const posCircle = document.getElementById("circle");
+posCircle.style.background = `conic-gradient( #ff0000  ${percentageCorrect}%, #00ffff ${resultWrong}%)`;
