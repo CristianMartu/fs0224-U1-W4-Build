@@ -75,23 +75,16 @@ const changeQuestion = (index, time = 20) => {
       'click',
       (change) => {
         myAnswer.push(element.innerHTML)
-        if (correctAnswer[index - 1] === element.innerText) {
-          element.style.backgroundColor = 'green'
-        } else {
-          element.style.backgroundColor = 'red'
-        }
         if (index === questions.length) {
           sessionStorage.setItem('myAnswer', myAnswer)
           window.location.href = 'results.html'
         } else {
           clearInterval(startTimer)
           p.innerText = '0'
-          setTimeout(() => {
-            deleteQuestion()
-            createQuestion(posMain, questions[index], index)
-            index++
-            changeQuestion(index)
-          }, 1000)
+          deleteQuestion()
+          createQuestion(posMain, questions[index], index)
+          index++
+          changeQuestion(index)
         }
       },
       { once: true }

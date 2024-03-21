@@ -38,24 +38,6 @@ const messageParagraph = document.querySelector('#circle2 p')
 const p1Correct = document.getElementById('p1')
 const p3Wrong = document.getElementById('p3')
 
-// const animatePercentageText = () => {
-//   let currentPercentage = 0
-//   const interval = setInterval(() => {
-//     if (currentPercentage >= percentageCorrect) {
-//       clearInterval(interval)
-//     } else {
-//       currentPercentage++
-//       // posCircle.style.background = `conic-gradient( #c2128d ${currentPercentage}%, #00ffff 0%)`
-//       p1Correct.innerHTML = currentPercentage + '%'
-//       if (currentPercentage === 100 - percentageCorrect) {
-//         currentPercentage++
-//         posCircle.style.background = `conic-gradient( #c2128d ${currentPercentage}%, #00ffff 0%)`
-//         p3Wrong.innerHTML = currentPercentage + '%'
-//       }
-//     }
-//   }, 20)
-// }
-
 const animatePercentageText = (totalWrong, totalCorrect) => {
   let currentWrong = 0
   let currentCorrect = 0
@@ -86,4 +68,3 @@ if (percentageCorrect >= 60) {
 
 const posCircle = document.getElementById('circle')
 animatePercentageText(percentageWrong, percentageCorrect)
-// animatePercentageText()
