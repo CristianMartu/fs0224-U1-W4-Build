@@ -31,8 +31,35 @@ const wrong1 = document.getElementById("p3");
 wrong1.innerText = result(lenghtAnswer, resultWrong) + "%";
 const wrong2 = document.getElementById("p4");
 wrong2.innerText = questionResult(resultWrong, lenghtAnswer);
+// const percentageCorrect = result(lenghtAnswer, lengthCorrect);
+// const messageParagraph = document.querySelector("#circle2 p");
+// if (percentageCorrect >= 60) {
+//   messageParagraph.innerHTML =
+//     "Congratulazioni! <span style='color: #00BFFF;'>hai passato l'esame.</span>";
+// } else {
+//   messageParagraph.innerHTML =
+//     "Ci dispiace! <span style='color: red;'>Non hai passato l'esame.</span>";
+// }
+// const posCircle = document.getElementById("circle");
+// posCircle.style.background = `conic-gradient( #00ffff   ${percentageCorrect}%, #c2128d ${resultWrong}%)`;
+
+
 const percentageCorrect = result(lenghtAnswer, lengthCorrect);
 const messageParagraph = document.querySelector("#circle2 p");
+
+// Funzione per animare il testo della percentuale
+function animatePercentageText() {
+  let currentPercentage = 0;
+  const interval = setInterval(() => {
+    if (currentPercentage >= percentageCorrect) {
+      clearInterval(interval);
+    } else {
+      currentPercentage++;
+      posCircle.style.background = `conic-gradient(#00ffff ${currentPercentage}%, #9b9898 0%)`
+    }
+  }, 20); // Tempo tra gli aggiornamenti della percentuale (ms)
+}
+
 if (percentageCorrect >= 60) {
   messageParagraph.innerHTML =
     "Congratulazioni! <span style='color: #00BFFF;'>hai passato l'esame.</span>";
@@ -40,5 +67,9 @@ if (percentageCorrect >= 60) {
   messageParagraph.innerHTML =
     "Ci dispiace! <span style='color: red;'>Non hai passato l'esame.</span>";
 }
+
 const posCircle = document.getElementById("circle");
 posCircle.style.background = `conic-gradient( #00ffff   ${percentageCorrect}%, #c2128d ${resultWrong}%)`;
+
+// Avvia l'animazione del testo della percentuale
+animatePercentageText();
