@@ -23,8 +23,8 @@ button:hover {
 }
 
 #circle {
-  width: 18rem;
-  height: 18rem;
+  width: 21rem;
+  height: 21rem;
   border-radius: 50%;
   display: flex;
   margin-inline: auto;
