@@ -70,14 +70,7 @@ const changeQuestion = (index, time = 20) => {
 
   const posButton = document.querySelectorAll('.buttons')
   posButton.forEach((element) => {
-    element.addEventListener('mouseover', (changeColor) => {
-      element.classList.add('changeColor')
-    })
-    element.addEventListener('mouseleave', (changeColor) => {
-      element.classList.remove('changeColor')
-    })
-    console.log(element)
-    console.dir(element)
+    element.classList.add('changeColor')
     element.addEventListener(
       'click',
       (change) => {

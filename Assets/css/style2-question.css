@@ -40,8 +40,8 @@ footer p span {
   font-weight: bold;
   color: #d20094;
 }
-.changeColor {
-  background-color: #d20094;
+.changeColor:hover {
+  background: linear-gradient(#70014f, #d20094);
 }
 
 main p {
@@ -76,7 +76,7 @@ main p {
   flex-direction: column;
   background-size: cover;
   overflow: hidden;
-  background-image: url("/Assets/image/bg.jpg");
+  background-image: url('/Assets/image/bg.jpg');
 }
 
 #timer {
