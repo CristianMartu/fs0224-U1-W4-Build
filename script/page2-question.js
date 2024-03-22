@@ -144,29 +144,33 @@ const posCircle = document.getElementById('circle')
 const p = document.getElementById('timer')
 const shuffledArray = []
 const numberOfQuestion = document.getElementById('question-number')
-const checkBoxes = document.querySelectorAll('input[type="checkbox"]')
+const checkBoxes = document.querySelectorAll('input[type="radio"]')
 const formStart = document.getElementById('myForm')
 const readDifficulty = ''
 
 const handleStart = (e) => {
   e.preventDefault()
   const quantityQuestion = numberOfQuestion.value
+  const arrayLenght = shuffleArray(questionsEasy)
 
   // checkBoxes.forEach((element) => {
-  //   element.addEventListener('change', () => {
-  //     console.log(element.value)
-  //   })
+  //   if (element.checked) {
+  //     console.log(element)
+  //     console.log(element.id)
+  //     if (element.id === 'check-easy') {
+  //       arrayLenght = shuffleArray(questionsEasy)
+  //     } else if (element.id === 'check-medium') {
+  //       arrayLenght = shuffleArray(questionsMedium)
+  //     } else if (element.id === 'check-hard') {
+  //       arrayLenght = shuffleArray(questionsHard)
+  //     } else {
+  //       console.log('error')
+  //     }
+  //   }
   // })
 
-  const arrayLenght = shuffleArray(questionsEasy)
-  // deleteQuestion()
-  // start(arrayLenght, quantityQuestion)
+  deleteQuestion()
+  start(arrayLenght, quantityQuestion)
 }
-console.log()
-checkBoxes.forEach((element) => {
-  element.addEventListener('change', () => {
-    console.log(element.value)
-  })
-})
 
 formStart.addEventListener('submit', handleStart)
