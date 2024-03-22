@@ -52,7 +52,8 @@ const animatePercentageText = (totalWrong, totalCorrect) => {
       clearInterval(interval)
     } else {
       if (currentCorrect <= totalCorrect) {
-        p1Correct.innerHTML = currentCorrect + '%'
+        const roundedCorrect = parseFloat(currentCorrect).toFixed(2)
+        p1Correct.innerHTML = roundedCorrect + '%'
         currentCorrect++
       }
       if (currentWrong <= totalWrong) {
@@ -76,6 +77,7 @@ if (percentageCorrect >= 60) {
 }
 
 // funzione in caso il punteggio delle risposte corrette e sbagliate sia uguale
+
 const posCircle = document.getElementById('circle')
 if (percentageCorrect !== percentageWrong) {
   animatePercentageText(percentageWrong, percentageCorrect)
