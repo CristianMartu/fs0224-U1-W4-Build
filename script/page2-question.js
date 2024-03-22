@@ -119,32 +119,45 @@ const changeQuestion = (time, index = 1) => {
 const posMain = document.querySelector('main')
 const posCircle = document.getElementById('circle')
 const p = document.getElementById('timer')
-
-const quantityQuestion = 10
-
-// Mischia l'array delle domande
-const arrayLenght = shuffleArray(questionsEasy)
-
-const questionDifficulty = arrayLenght[0].difficulty
-
 const shuffledArray = []
-for (let i = 0; i < quantityQuestion; i++) {
-  shuffledArray.push(arrayLenght[i])
+const numberOfQuestion = document.getElementById('question-number')
+const checkBoxes = document.querySelectorAll('input[type="checkbox"]')
+const formStart = document.getElementById('myForm')
+
+const handleStart = (e) => {
+  e.preventDefault()
+  // checkBoxes.forEach((element) => {})
+  const quantityQuestion = numberOfQuestion.value
+  const arrayLenght = shuffleArray(questionsEasy)
+  deleteQuestion()
+  start(arrayLenght, quantityQuestion)
 }
+console.log(formStart)
+formStart.addEventListener('submit', handleStart)
 
-// Variabile per memorizzare le risposte corrette
-const correctAnswer = corAnswer(shuffledArray)
+const start = (arrayLenght, quantityQuestion) => {
+  const questionDifficulty = arrayLenght[0].difficulty
 
-// Imposta il tempo per ogni domanda e crea la prima domanda
-let changeTime = ''
-if (questionDifficulty === 'easy') {
-  changeTime = '30'
-} else if (questionDifficulty === 'medium') {
-  changeTime = '45'
-} else if (questionDifficulty === 'hard') {
-  changeTime = '60'
-} else {
-  console.log('error')
+  for (let i = 0; i < quantityQuestion; i++) {
+    shuffledArray.push(arrayLenght[i])
+  }
+  const correctAnswer = corAnswer(shuffledArray)
+  let changeTime = ''
+  if (questionDifficulty === 'easy') {
+    changeTime = '30'
+  } else if (questionDifficulty === 'medium') {
+    changeTime = '45'
+  } else if (questionDifficulty === 'hard') {
+    changeTime = '60'
+  } else {
+    console.log('error')
+  }
+  createQuestion(posMain, shuffledArray[0], 0)
+  changeQuestion(changeTime)
+  // Memorizza le risposte corrette nella sessione
+  sessionStorage.setItem('correctAnswer', correctAnswer)
+
+  console.log(correctAnswer)
 }
 
 createQuestion(posMain, shuffledArray[0], 0)
