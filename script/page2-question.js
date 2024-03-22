@@ -6,9 +6,6 @@ function shuffleArray(array) {
   return array.sort(() => Math.random() - 0.5)
 }
 
-// Mischia l'array delle domande
-const shuffledArray = shuffleArray(questions)
-
 // Funzione per creare un array contenente la risposta corretta e le risposte errate di una domanda
 const createArrayQuestions = (element) => {
   const array = []
@@ -20,10 +17,10 @@ const createArrayQuestions = (element) => {
 }
 
 // Funzione per creare un array contenente tutte le risposte corrette delle domande
-const corAnswer = () => {
+const corAnswer = (arrayElement) => {
   const array = []
-  for (let i = 0; i < questions.length; i++) {
-    array.push(questions[i].correct_answer)
+  for (let i = 0; i < arrayElement.length; i++) {
+    array.push(arrayElement[i].correct_answer)
   }
   return array
 }
@@ -123,13 +120,35 @@ const posMain = document.querySelector('main')
 const posCircle = document.getElementById('circle')
 const p = document.getElementById('timer')
 
+const quantityQuestion = 10
+
+// Mischia l'array delle domande
+const arrayLenght = shuffleArray(questionsEasy)
+
+const questionDifficulty = arrayLenght[0].difficulty
+
+const shuffledArray = []
+for (let i = 0; i < quantityQuestion; i++) {
+  shuffledArray.push(arrayLenght[i])
+}
+
 // Variabile per memorizzare le risposte corrette
-const correctAnswer = corAnswer()
+const correctAnswer = corAnswer(shuffledArray)
 
 // Imposta il tempo per ogni domanda e crea la prima domanda
-let easyTime = 20
+let changeTime = ''
+if (questionDifficulty === 'easy') {
+  changeTime = '30'
+} else if (questionDifficulty === 'medium') {
+  changeTime = '45'
+} else if (questionDifficulty === 'hard') {
+  changeTime = '60'
+} else {
+  console.log('error')
+}
+
 createQuestion(posMain, shuffledArray[0], 0)
-changeQuestion(easyTime)
+changeQuestion(changeTime)
 
 // Memorizza le risposte corrette nella sessione
 sessionStorage.setItem('correctAnswer', correctAnswer)

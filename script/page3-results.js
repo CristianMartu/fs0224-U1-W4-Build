@@ -45,18 +45,19 @@ const p3Wrong = document.getElementById('p3')
 const animatePercentageText = (totalWrong, totalCorrect) => {
   let currentWrong = 0
   let currentCorrect = 0
-  let currentColor = 100.00
+  let currentColor = 100.0
   const interval = setInterval(() => {
-    if (currentWrong - 1 === Math.floor(totalWrong) && currentCorrect - 1 === Math.floor(totalCorrect)) {
+    if (
+      currentWrong - 1 === Math.floor(totalWrong) &&
+      currentCorrect - 1 === Math.floor(totalCorrect)
+    ) {
       clearInterval(interval)
-      p1Correct.innerHTML = totalWrong.toFixed(2)
-      p3Wrong.innerHTML = totalCorrect.toFixed(2)
-
-
+      p1Correct.innerHTML = totalCorrect.toFixed(2)
+      p3Wrong.innerHTML = totalWrong.toFixed(2)
     } else {
       if (currentCorrect <= totalCorrect) {
         p1Correct.innerHTML = currentCorrect + '%'
-        currentCorrect++;
+        currentCorrect++
       }
       if (currentWrong <= totalWrong) {
         p3Wrong.innerHTML = currentWrong + '%'
@@ -87,4 +88,3 @@ if (percentageCorrect !== percentageWrong) {
 } else {
   animatePercentageText(51, 51)
 }
-
