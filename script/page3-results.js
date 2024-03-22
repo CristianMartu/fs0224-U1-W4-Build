@@ -34,7 +34,7 @@ wrong1.innerText = percentageWrong + '%'
 const wrong2 = document.getElementById('p4')
 wrong2.innerText = questionResult(resultWrong, lenghtAnswer)
 
-const messageParagraph = document.querySelector('#circle2 p')
+const messageParagraph = document.getElementById('p5')
 const p1Correct = document.getElementById('p1')
 const p3Wrong = document.getElementById('p3')
 

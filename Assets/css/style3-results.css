@@ -28,38 +28,25 @@ button:hover {
   background-color: #00ffff;
   color: white;
 }
+#conteiner {
+  width: 15rem;
+  height: 15rem;
+}
 
 #circle {
   width: 14rem;
   height: 14rem;
   border-radius: 50%;
-  display: flex;
   margin-inline: auto;
   background: linear-gradient(to right, #00ffff 0%, #c2128d 0%);
-  mask-image: radial-gradient(
-    circle at center,
-    transparent 0,
-    transparent 5rem,
-    black 5rem
-  );
-  position: relative;
+  mask-image: radial-gradient(circle at center, transparent 5rem, white 5rem);
 }
 
 #circle2 {
   width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  background-color: transparent;
-  margin-inline: auto;
-  margin-block: auto;
-  color: black;
-  display: flex;
-}
-
-#circle2 p {
-  z-index: 1;
-  margin-block: auto;
-  margin-inline: auto;
+  position: absolute;
+  padding-block: 5.5rem;
+  padding-inline: 2.5rem;
 }
 
 #corrent-answer {

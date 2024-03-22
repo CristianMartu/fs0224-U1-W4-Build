@@ -118,3 +118,5 @@ createQuestion(posMain, shuffledArray[0], 0)
 changeQuestion(easyTime)
 
 sessionStorage.setItem('correctAnswer', correctAnswer)
+
+console.log(correctAnswer)

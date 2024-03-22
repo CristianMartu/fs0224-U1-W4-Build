@@ -4,8 +4,9 @@ header img {
 }
 
 h1 {
+  width: 60vw;
   margin-block: 2rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 100;
   margin-inline: auto;
 }
@@ -52,31 +53,32 @@ main p {
 
 #circleContainer {
   display: inline-block;
-  width: 5rem;
-  height: 5rem;
-  padding-left: 60vw;
+  margin-left: 60vw;
+  left: 19rem;
 }
 
 #circle {
-  width: 100%;
-  height: 100%;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
   display: flex;
   margin-inline: auto;
   background: linear-gradient(to right, #00ffff 0%, grey 0%);
+  mask-image: radial-gradient(circle at center, transparent 2rem, white 2rem);
+  position: relative;
 }
 
 #circle2 {
-  width: 80%;
-  height: 80%;
+  width: 5rem;
   border-radius: 50%;
   margin-inline: auto;
   margin-block: auto;
   color: white;
   display: flex;
   flex-direction: column;
-  background-image: url('/Assets/image/bg.jpg');
-  background-position: right;
+  position: absolute;
+  top: 5rem;
+  /* left: 19rem; */
 }
 
 #timer {
