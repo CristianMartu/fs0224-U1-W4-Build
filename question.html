@@ -22,7 +22,28 @@
         <div id="circle" class="color"></div>
       </div>
     </header>
-    <main></main>
+    <main>
+      <h1>Choose difficulty:</h1>
+      <div>
+        <p>Quantity of question:</p>
+        <input
+          type="number"
+          value="10"
+          min="10"
+          max="30"
+          id="question-number"
+        />
+        <form id="myForm">
+          <input type="radio" id="check-easy" name="check-radio" />
+          <label for="check-easy">EASY</label>
+          <input type="radio" id="check-medium" name="check-radio" />
+          <label for="check-medium">MEDIUM</label>
+          <input type="radio" id="check-hard" name="check-radio" />
+          <label for="check-hard">HARD</label>
+          <button type="submit" id="btn-start">Start!</button>
+        </form>
+      </div>
+    </main>
     <footer>
       <p></p>
     </footer>
