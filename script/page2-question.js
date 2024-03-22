@@ -154,3 +154,10 @@ changeQuestion(changeTime)
 sessionStorage.setItem('correctAnswer', correctAnswer)
 
 console.log(correctAnswer)
+const arrayQuestions = []
+for (let i = 0; i < shuffledArray.length; i++){
+  arrayQuestions.push(shuffledArray[i].question)
+}
+
+sessionStorage.setItem("arrayQuestions", arrayQuestions)
+console.log(arrayQuestions)
