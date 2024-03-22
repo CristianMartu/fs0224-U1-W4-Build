@@ -41,20 +41,22 @@ wrong2.innerText = questionResult(resultWrong, lenghtAnswer)
 const messageParagraph = document.getElementById('p5')
 const p1Correct = document.getElementById('p1')
 const p3Wrong = document.getElementById('p3')
-
 // funzione per fare un'animazione al grafico, sia per la circonferenza che per le percentuali
 const animatePercentageText = (totalWrong, totalCorrect) => {
   let currentWrong = 0
   let currentCorrect = 0
-  let currentColor = 100
+  let currentColor = 100.00
   const interval = setInterval(() => {
-    if (currentWrong === totalWrong && currentCorrect === totalCorrect) {
+    if (currentWrong - 1 === Math.floor(totalWrong) && currentCorrect - 1 === Math.floor(totalCorrect)) {
       clearInterval(interval)
+      p1Correct.innerHTML = totalWrong.toFixed(2)
+      p3Wrong.innerHTML = totalCorrect.toFixed(2)
+
+
     } else {
       if (currentCorrect <= totalCorrect) {
-        const roundedCorrect = parseFloat(currentCorrect).toFixed(2)
-        p1Correct.innerHTML = roundedCorrect + '%'
-        currentCorrect++
+        p1Correct.innerHTML = currentCorrect + '%'
+        currentCorrect++;
       }
       if (currentWrong <= totalWrong) {
         p3Wrong.innerHTML = currentWrong + '%'
@@ -79,8 +81,10 @@ if (percentageCorrect >= 60) {
 // funzione in caso il punteggio delle risposte corrette e sbagliate sia uguale
 
 const posCircle = document.getElementById('circle')
+
 if (percentageCorrect !== percentageWrong) {
   animatePercentageText(percentageWrong, percentageCorrect)
 } else {
   animatePercentageText(51, 51)
 }
+
