@@ -162,7 +162,7 @@ const handleStart = (e) => {
   // deleteQuestion()
   // start(arrayLenght, quantityQuestion)
 }
-
+console.log()
 checkBoxes.forEach((element) => {
   element.addEventListener('change', () => {
     console.log(element.value)
