@@ -114,29 +114,8 @@ const changeQuestion = (time, index = 1) => {
     })
   })
 }
-
-// Seleziona gli elementi necessari dal documento HTML
-const posMain = document.querySelector('main')
-const posCircle = document.getElementById('circle')
-const p = document.getElementById('timer')
-const shuffledArray = []
-const numberOfQuestion = document.getElementById('question-number')
-const checkBoxes = document.querySelectorAll('input[type="checkbox"]')
-const formStart = document.getElementById('myForm')
-
-const handleStart = (e) => {
-  e.preventDefault()
-  // checkBoxes.forEach((element) => {})
-  const quantityQuestion = numberOfQuestion.value
-  const arrayLenght = shuffleArray(questionsEasy)
-  deleteQuestion()
-  start(arrayLenght, quantityQuestion)
-}
-console.log(formStart)
-formStart.addEventListener('submit', handleStart)
-
-const start = (arrayLenght, quantityQuestion) => {
-  const questionDifficulty = arrayLenght[0].difficulty
+const start = (arrayLenght, quantityQuestion, difficulty) => {
+  const questionDifficulty = difficulty
 
   for (let i = 0; i < quantityQuestion; i++) {
     shuffledArray.push(arrayLenght[i])
@@ -159,3 +138,35 @@ const start = (arrayLenght, quantityQuestion) => {
 
   console.log(correctAnswer)
 }
+// Seleziona gli elementi necessari dal documento HTML
+const posMain = document.querySelector('main')
+const posCircle = document.getElementById('circle')
+const p = document.getElementById('timer')
+const shuffledArray = []
+const numberOfQuestion = document.getElementById('question-number')
+const checkBoxes = document.querySelectorAll('input[type="checkbox"]')
+const formStart = document.getElementById('myForm')
+const readDifficulty = ''
+
+const handleStart = (e) => {
+  e.preventDefault()
+  const quantityQuestion = numberOfQuestion.value
+
+  // checkBoxes.forEach((element) => {
+  //   element.addEventListener('change', () => {
+  //     console.log(element.value)
+  //   })
+  // })
+
+  const arrayLenght = shuffleArray(questionsEasy)
+  // deleteQuestion()
+  // start(arrayLenght, quantityQuestion)
+}
+
+checkBoxes.forEach((element) => {
+  element.addEventListener('change', () => {
+    console.log(element.value)
+  })
+})
+
+formStart.addEventListener('submit', handleStart)
